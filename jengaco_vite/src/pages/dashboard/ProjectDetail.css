@@ -1,0 +1,82 @@
+.tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--gray-200); }
+.tab-btn {
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all var(--transition);
+  display: flex; align-items: center; gap: 6px;
+}
+.tab-btn:hover  { color: var(--blue); }
+.tab-btn.active { color: var(--blue); border-bottom-color: var(--blue); font-weight: 600; }
+.tab-count {
+  background: var(--blue-muted);
+  color: var(--blue);
+  border-radius: 99px;
+  padding: 1px 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Milestones */
+.milestones { display: flex; flex-direction: column; }
+.milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 24px;
+}
+.milestone:last-child { padding-bottom: 0; }
+.milestone-dot {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  color: var(--gray-400);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  z-index: 1;
+  transition: all var(--transition);
+}
+.milestone.done    .milestone-dot { background: var(--blue); color: white; }
+.milestone.current .milestone-dot { background: var(--orange); color: white; box-shadow: 0 0 0 4px rgba(245,158,11,0.2); }
+.milestone-label { font-size: 0.9rem; font-weight: 500; padding-top: 6px; color: var(--gray-600); }
+.milestone.done    .milestone-label { color: var(--gray-900); font-weight: 600; }
+.milestone.current .milestone-label { color: var(--orange-dark); font-weight: 700; }
+.milestone-line {
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% - 8px);
+  background: var(--gray-200);
+}
+.milestone.done .milestone-line { background: var(--blue); }
+
+/* Bid card */
+.bid-card {
+  padding: 20px;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.bid-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+
+@media (max-width: 900px) {
+  .tab-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .tabs { overflow-x: auto; }
+  .tab-btn { white-space: nowrap; padding: 10px 14px; }
+}
