@@ -1,0 +1,37 @@
+.lf-root { background: var(--blue-dark); padding: 60px 0 0; }
+.lf-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.lf-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.lf-mark {
+  width: 36px; height: 36px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.88rem; color: white;
+}
+.lf-name { font-family: var(--font-display); font-weight: 700; font-size: 1rem; color: white; }
+.lf-sub  { font-size: 0.65rem; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: .1em; }
+.lf-tagline { color: rgba(255,255,255,0.45); font-size: 0.84rem; line-height: 1.7; max-width: 260px; margin-bottom: 18px; }
+.lf-contact { display: flex; flex-direction: column; gap: 7px; font-size: 0.82rem; color: rgba(255,255,255,0.45); }
+
+.lf-links { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.lf-col   { display: flex; flex-direction: column; gap: 9px; }
+.lf-col-title { font-weight: 700; color: white; font-size: 0.82rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.07em; }
+.lf-col a { color: rgba(255,255,255,0.42); font-size: 0.82rem; text-decoration: none; transition: color var(--transition); }
+.lf-col a:hover { color: white; }
+
+.lf-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 18px 0;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .lf-inner  { grid-template-columns: 1fr; gap: 32px; }
+  .lf-links  { grid-template-columns: 1fr 1fr; }
+}

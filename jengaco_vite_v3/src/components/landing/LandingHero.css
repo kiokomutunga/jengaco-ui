@@ -1,0 +1,86 @@
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #061E3C 0%, #0F4C81 55%, #1565A8 100%);
+}
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,0.18);
+  border: 1px solid rgba(245,158,11,0.32);
+  color: var(--orange);
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: hpulse 2s infinite;
+}
+@keyframes hpulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+.hero-accent { color: var(--orange); }
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.68);
+  max-width: 540px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.hero-actions { display: flex; gap: 14px; margin-bottom: 52px; flex-wrap: wrap; }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 28px;
+  border: 1.5px solid rgba(255,255,255,0.36);
+  border-radius: var(--radius);
+  color: white; font-size: 0.96rem; font-weight: 500;
+  transition: all var(--transition);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.09); border-color: white; }
+
+.hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.9rem; font-weight: 800; color: white;
+}
+.hero-stat-label { font-size: 0.76rem; color: rgba(255,255,255,0.45); }
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 2.1rem; }
+  .hero-stats  { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+}
